@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 const InstructorSection = () => {
   return (
@@ -8,10 +9,10 @@ const InstructorSection = () => {
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-4">
-            <div className="aspect-square overflow-hidden rounded-2xl bg-gray-100">
+            <div className="aspect-square overflow-hidden rounded-2xl bg-gray-100 shadow-lg border-4 border-white">
               <img 
-                src="https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=1889&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
-                alt="Instructor"
+                src="/lovable-uploads/34150a49-e2bc-4efe-8fdb-ceeb03e36e41.png" 
+                alt="Swastik Pradhan"
                 className="object-cover w-full h-full"
               />
             </div>
@@ -21,7 +22,7 @@ const InstructorSection = () => {
               Meet Your Instructor
             </div>
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight mb-4">
-              Hi, I'm Rahul Sharma
+              Hi, I'm <span className="gradient-text">Swastik Pradhan</span>
             </h2>
             <p className="text-gray-500 mb-6 text-lg">
               As a DevOps & AWS trainer based in Bangalore, I've helped over 500 students and working professionals launch their cloud careers. With 8+ years of experience at leading tech companies, I understand what employers are actually looking for.
