@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Rocket, Certificate, Globe, MessageCircle } from "lucide-react";
+import { Rocket, BookOpen, Globe, MessageCircle } from "lucide-react";
 
 const WhyThisCourse = () => {
   const features = [
@@ -13,7 +13,7 @@ const WhyThisCourse = () => {
     {
       title: "100% Practical, Hands-on Learning",
       description: "Build real-world projects that you can add to your portfolio, not just theoretical knowledge.",
-      icon: <Certificate className="h-10 w-10 text-brand-500" />
+      icon: <BookOpen className="h-10 w-10 text-brand-500" />
     },
     {
       title: "Certificate of Completion",

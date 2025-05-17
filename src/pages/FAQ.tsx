@@ -9,7 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Question } from "lucide-react";
+import { HelpCircle } from "lucide-react";
 
 const FAQPage = () => {
   const generalFaqs = [
@@ -142,7 +142,7 @@ const FAQPage = () => {
             <div className="max-w-4xl mx-auto">
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-8 flex items-center">
-                  <Question className="h-6 w-6 text-brand-500 mr-2" />
+                  <HelpCircle className="h-6 w-6 text-brand-500 mr-2" />
                   General Questions
                 </h2>
                 
@@ -162,7 +162,7 @@ const FAQPage = () => {
 
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-8 flex items-center">
-                  <Question className="h-6 w-6 text-brand-500 mr-2" />
+                  <HelpCircle className="h-6 w-6 text-brand-500 mr-2" />
                   Course Content & Structure
                 </h2>
                 
@@ -182,7 +182,7 @@ const FAQPage = () => {
 
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-8 flex items-center">
-                  <Question className="h-6 w-6 text-brand-500 mr-2" />
+                  <HelpCircle className="h-6 w-6 text-brand-500 mr-2" />
                   Support & Mentoring
                 </h2>
                 
@@ -202,7 +202,7 @@ const FAQPage = () => {
 
               <div className="mb-12">
                 <h2 className="text-2xl font-bold mb-8 flex items-center">
-                  <Question className="h-6 w-6 text-brand-500 mr-2" />
+                  <HelpCircle className="h-6 w-6 text-brand-500 mr-2" />
                   Payment & Refunds
                 </h2>
                 

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { GitBranch, Docker, Jenkins, Kubernetes, Terraform, Aws } from "lucide-react";
+import { GitBranch, Container, CirclePlay, Cloud, FileCode, ServerCrash } from "lucide-react";
 
 const WhatYouWillLearn = () => {
   const technologies = [
@@ -12,27 +12,27 @@ const WhatYouWillLearn = () => {
     {
       name: "Docker",
       description: "Containerization and Docker Compose essentials",
-      icon: <Docker className="h-12 w-12 text-gray-700" />,
+      icon: <Container className="h-12 w-12 text-gray-700" />,
     },
     {
       name: "Jenkins",
       description: "CI/CD pipeline automation and integration",
-      icon: <Jenkins className="h-12 w-12 text-gray-700" />,
+      icon: <CirclePlay className="h-12 w-12 text-gray-700" />,
     },
     {
       name: "Kubernetes",
       description: "Container orchestration and scaling applications",
-      icon: <Kubernetes className="h-12 w-12 text-gray-700" />,
+      icon: <Cloud className="h-12 w-12 text-gray-700" />,
     },
     {
       name: "Terraform",
       description: "Infrastructure as Code for cloud resources",
-      icon: <Terraform className="h-12 w-12 text-gray-700" />,
+      icon: <FileCode className="h-12 w-12 text-gray-700" />,
     },
     {
       name: "AWS Services",
       description: "EC2, S3, IAM, VPC, RDS, Lambda, and more",
-      icon: <Aws className="h-12 w-12 text-gray-700" />,
+      icon: <ServerCrash className="h-12 w-12 text-gray-700" />,
     },
   ];
 
