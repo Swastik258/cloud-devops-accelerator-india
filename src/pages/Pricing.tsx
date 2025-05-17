@@ -8,6 +8,7 @@ import { Check, DollarSign } from 'lucide-react';
 const PricingPage = () => {
   const features = [
     "40+ On-demand Video Lectures",
+    "Weekly Live Classes with Q&A Sessions",
     "4 Hands-on DevOps & AWS Projects",
     "Downloadable Resources & Code Examples",
     "Community Support via Dedicated Group",
@@ -35,7 +36,7 @@ const PricingPage = () => {
                 Simple, Transparent <span className="gradient-text">Pricing</span>
               </h1>
               <p className="text-xl text-gray-600">
-                Invest in your future with our comprehensive DevOps & AWS course.
+                Invest in your future with our comprehensive DevOps & AWS course with live classes.
               </p>
             </div>
           </div>
@@ -58,15 +59,15 @@ const PricingPage = () => {
 
                       <div className="mt-6">
                         <div className="flex items-end">
-                          <span className="text-4xl font-bold">₹1,999</span>
+                          <span className="text-4xl font-bold">₹2,999</span>
                           <span className="text-gray-500 ml-2 line-through">₹4,999</span>
                         </div>
-                        <p className="text-brand-600 font-medium mt-1">Limited Time Offer (60% off)</p>
+                        <p className="text-brand-600 font-medium mt-1">Limited Time Offer (40% off)</p>
                       </div>
 
                       <div className="mt-6">
                         <p className="text-gray-600 mb-4">
-                          Get full access to the DevOps & AWS Masterclass with just one payment.
+                          Get full access to the DevOps & AWS Masterclass with weekly live classes and one-on-one doubt resolution.
                         </p>
                         <Button className="w-full bg-brand-500 hover:bg-brand-600 py-6 text-lg">
                           Enroll Now
@@ -267,7 +268,7 @@ const PricingPage = () => {
                 Enroll now and transform your career with in-demand skills.
               </p>
               <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100 py-6 px-10 text-lg">
-                Enroll Now for ₹1,999 Only
+                Enroll Now for ₹2,999 Only
               </Button>
               <p className="mt-4 text-white/80">
                 7-day money-back guarantee. No risk, cancel anytime.

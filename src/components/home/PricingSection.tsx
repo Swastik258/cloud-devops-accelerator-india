@@ -2,10 +2,12 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const PricingSection = () => {
   const features = [
     "40+ Video Lectures",
+    "Weekly Live Classes",
     "4 Hands-on Projects",
     "Downloadable Resources",
     "Community Support",
@@ -34,14 +36,14 @@ const PricingSection = () => {
               <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div>
                   <h3 className="text-2xl font-bold">DevOps & AWS Masterclass</h3>
-                  <p className="text-gray-500 mt-1">3-Month Comprehensive Course</p>
+                  <p className="text-gray-500 mt-1">3-Month Comprehensive Course with Live Classes</p>
                 </div>
                 <div className="mt-4 md:mt-0">
                   <div className="flex items-baseline">
-                    <span className="text-3xl font-bold">₹1,999</span>
+                    <span className="text-3xl font-bold">₹2,999</span>
                     <span className="ml-2 text-gray-500 line-through">₹4,999</span>
                   </div>
-                  <p className="text-sm text-brand-600">Limited Time Offer (60% off)</p>
+                  <p className="text-sm text-brand-600">Limited Time Offer (40% off)</p>
                 </div>
               </div>
 
@@ -63,8 +65,10 @@ const PricingSection = () => {
               </div>
 
               <div className="mt-8">
-                <Button className="w-full bg-brand-500 hover:bg-brand-600 py-6 text-lg">
-                  Enroll Now for ₹1,999 Only
+                <Button className="w-full bg-brand-500 hover:bg-brand-600 py-6 text-lg" asChild>
+                  <Link to="/pricing">
+                    Enroll Now for ₹2,999 Only
+                  </Link>
                 </Button>
                 <p className="text-sm text-gray-500 mt-2 text-center">
                   Secure payment via Razorpay • UPI, Cards, Net Banking accepted
