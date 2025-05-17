@@ -11,7 +11,7 @@ const InstructorSection = () => {
           <div className="lg:col-span-4">
             <div className="aspect-square overflow-hidden rounded-2xl bg-gray-100 shadow-lg border-4 border-white">
               <img 
-                src="/lovable-uploads/34150a49-e2bc-4efe-8fdb-ceeb03e36e41.png" 
+                src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80" 
                 alt="Swastik Pradhan"
                 className="object-cover w-full h-full"
               />
