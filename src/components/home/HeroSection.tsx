@@ -2,6 +2,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -91,8 +92,10 @@ const HeroSection = () => {
                 </div>
 
                 <div className="pt-4">
-                  <Button className="w-full bg-brand-500 hover:bg-brand-600">
-                    See Full Curriculum
+                  <Button className="w-full bg-brand-500 hover:bg-brand-600" asChild>
+                    <Link to="/curriculum">
+                      See Full Curriculum
+                    </Link>
                   </Button>
                 </div>
               </div>

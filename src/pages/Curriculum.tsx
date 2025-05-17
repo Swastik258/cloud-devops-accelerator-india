@@ -61,7 +61,21 @@ const CurriculumPage = () => {
       duration: "2 Weeks"
     },
     {
-      title: "Module 5: CI/CD with Jenkins",
+      title: "Module 5: Configuration Management with Ansible",
+      lessons: [
+        "Introduction to Configuration Management",
+        "Ansible Architecture & Installation",
+        "Ansible Inventory & Playbooks",
+        "Variables, Facts, and Templates",
+        "Roles & Best Practices",
+        "Dynamic Inventories",
+        "Ansible Vault for Secret Management",
+        "Integration with CI/CD Pipelines"
+      ],
+      duration: "2 Weeks"
+    },
+    {
+      title: "Module 6: CI/CD with Jenkins",
       lessons: [
         "Jenkins Architecture & Installation",
         "Creating & Managing Jenkins Jobs",
@@ -74,7 +88,7 @@ const CurriculumPage = () => {
       duration: "2 Weeks"
     },
     {
-      title: "Module 6: Container Orchestration with Kubernetes",
+      title: "Module 7: Container Orchestration with Kubernetes",
       lessons: [
         "Kubernetes Architecture & Components",
         "Setting up Kubernetes Cluster",
@@ -87,7 +101,7 @@ const CurriculumPage = () => {
       duration: "2 Weeks"
     },
     {
-      title: "Module 7: Infrastructure as Code with Terraform",
+      title: "Module 8: Infrastructure as Code with Terraform",
       lessons: [
         "IaC Concepts & Benefits",
         "Terraform Basics & HCL Syntax",
@@ -99,7 +113,7 @@ const CurriculumPage = () => {
       duration: "2 Weeks"
     },
     {
-      title: "Module 8: AWS Core Services",
+      title: "Module 9: AWS Core Services",
       lessons: [
         "AWS Global Infrastructure",
         "IAM - Users, Groups, Roles & Policies",
@@ -113,7 +127,7 @@ const CurriculumPage = () => {
       duration: "3 Weeks"
     },
     {
-      title: "Module 9: Advanced AWS Services",
+      title: "Module 10: Advanced AWS Services",
       lessons: [
         "Lambda - Serverless Compute",
         "ECR - Elastic Container Registry",
@@ -126,7 +140,7 @@ const CurriculumPage = () => {
       duration: "3 Weeks"
     },
     {
-      title: "Module 10: Capstone Project & Interview Preparation",
+      title: "Module 11: Capstone Project & Interview Preparation",
       lessons: [
         "End-to-End DevOps Pipeline Project",
         "AWS Architecture Design Project",
