@@ -1,11 +1,14 @@
-
 import React from 'react';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Check, DollarSign } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useToast } from '@/hooks/use-toast';
 
 const PricingPage = () => {
+  const { toast } = useToast();
+  
   const features = [
     "40+ On-demand Video Lectures",
     "Weekly Live Classes with Q&A Sessions",
@@ -19,6 +22,22 @@ const PricingPage = () => {
     "Resume & LinkedIn Profile Tips",
     "Personal Doubt Resolution via Email"
   ];
+  
+  const handleEnrollNow = () => {
+    // This will eventually be replaced with actual payment processing
+    toast({
+      title: "Enrollment initiated",
+      description: "You will be redirected to the payment gateway shortly.",
+    });
+    
+    // For now, just show a toast notification
+    setTimeout(() => {
+      toast({
+        title: "Demo Mode",
+        description: "This is a demo site. In production, this would redirect to payment.",
+      });
+    }, 1500);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -69,7 +88,7 @@ const PricingPage = () => {
                         <p className="text-gray-600 mb-4">
                           Get full access to the DevOps & AWS Masterclass with weekly live classes and one-on-one doubt resolution.
                         </p>
-                        <Button className="w-full bg-brand-500 hover:bg-brand-600 py-6 text-lg">
+                        <Button className="w-full bg-brand-500 hover:bg-brand-600 py-6 text-lg" onClick={handleEnrollNow}>
                           Enroll Now
                         </Button>
                         <p className="text-sm text-gray-500 mt-2 text-center">
@@ -157,8 +176,8 @@ const PricingPage = () => {
                     Enrolling with friends or colleagues? Get special discounts for group enrollment of 3 or more people. Contact us for details.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button className="bg-brand-500 hover:bg-brand-600">
-                      Contact for Group Discount
+                    <Button className="bg-brand-500 hover:bg-brand-600" asChild>
+                      <Link to="/contact">Contact for Group Discount</Link>
                     </Button>
                     <Button variant="outline" className="border-brand-200 text-brand-700 hover:bg-brand-50">
                       Learn More
@@ -194,7 +213,7 @@ const PricingPage = () => {
                   <tbody>
                     <tr>
                       <td className="py-3 px-6 border-t">Price</td>
-                      <td className="py-3 px-6 border-t text-center font-medium text-brand-600">₹1,999</td>
+                      <td className="py-3 px-6 border-t text-center font-medium text-brand-600">₹2,999</td>
                       <td className="py-3 px-6 border-t text-center">₹5,000 - ₹15,000</td>
                       <td className="py-3 px-6 border-t text-center">₹50,000+</td>
                     </tr>
@@ -267,7 +286,7 @@ const PricingPage = () => {
               <p className="text-xl mb-8 text-white/90">
                 Enroll now and transform your career with in-demand skills.
               </p>
-              <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100 py-6 px-10 text-lg">
+              <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100 py-6 px-10 text-lg" onClick={handleEnrollNow}>
                 Enroll Now for ₹2,999 Only
               </Button>
               <p className="mt-4 text-white/80">

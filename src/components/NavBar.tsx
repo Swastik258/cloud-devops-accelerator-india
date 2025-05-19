@@ -41,8 +41,8 @@ const NavBar = () => {
           <Link to="/contact" className="text-sm font-medium hover:text-brand-500 transition-colors">
             Contact
           </Link>
-          <Button className="bg-brand-500 hover:bg-brand-600">
-            Enroll Now
+          <Button className="bg-brand-500 hover:bg-brand-600" asChild>
+            <Link to="/pricing">Enroll Now</Link>
           </Button>
         </nav>
 
@@ -100,8 +100,8 @@ const NavBar = () => {
             >
               Contact
             </Link>
-            <Button className="bg-brand-500 hover:bg-brand-600 w-full">
-              Enroll Now
+            <Button className="bg-brand-500 hover:bg-brand-600 w-full" asChild>
+              <Link to="/pricing" onClick={() => setIsMenuOpen(false)}>Enroll Now</Link>
             </Button>
           </div>
         </div>

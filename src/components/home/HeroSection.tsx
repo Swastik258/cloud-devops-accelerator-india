@@ -26,8 +26,8 @@ const HeroSection = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-brand-500 hover:bg-brand-600 text-lg py-6">
-                Enroll Now
+              <Button size="lg" className="bg-brand-500 hover:bg-brand-600 text-lg py-6" asChild>
+                <Link to="/pricing">Enroll Now</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-brand-300 text-brand-700 hover:bg-brand-50 text-lg py-6">
                 <Play size={16} className="mr-2" />

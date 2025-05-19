@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
@@ -15,8 +16,8 @@ const CTASection = () => {
               Join 500+ students who have already transformed their careers with our practical, industry-ready curriculum.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100 text-lg py-6">
-                Enroll Now for ₹1,999
+              <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100 text-lg py-6" asChild>
+                <Link to="/pricing">Enroll Now for ₹2,999</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg py-6">
                 Download Syllabus
