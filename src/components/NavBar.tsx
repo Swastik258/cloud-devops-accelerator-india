@@ -16,7 +16,7 @@ const NavBar = () => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="font-bold text-2xl">
-            <span className="gradient-text">DevOps</span>
+            <span className="gradient-text">CloudCraft</span>
             <span className="text-black">Academy</span>
           </Link>
         </div>
@@ -28,6 +28,9 @@ const NavBar = () => {
           </Link>
           <Link to="/curriculum" className="text-sm font-medium hover:text-brand-500 transition-colors">
             Curriculum
+          </Link>
+          <Link to="/lab" className="text-sm font-medium hover:text-brand-500 transition-colors">
+            DevOps Lab
           </Link>
           <Link to="/pricing" className="text-sm font-medium hover:text-brand-500 transition-colors">
             Pricing
@@ -71,6 +74,13 @@ const NavBar = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Curriculum
+            </Link>
+            <Link 
+              to="/lab" 
+              className="text-sm font-medium hover:text-brand-500 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              DevOps Lab
             </Link>
             <Link 
               to="/pricing" 

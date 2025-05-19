@@ -20,7 +20,7 @@ const CTASection = () => {
                 <Link to="/pricing">Enroll Now for ₹2,999</Link>
               </Button>
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg py-6">
-                Download Syllabus
+                <Link to="/lab">Access DevOps Lab</Link>
               </Button>
             </div>
             <p className="mt-4 text-sm text-white/70">
