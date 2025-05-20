@@ -16,8 +16,8 @@ const NavBar = () => {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Link to="/" className="font-bold text-2xl">
-            <span className="gradient-text">CloudCraft</span>
-            <span className="text-black">Academy</span>
+            <span className="gradient-text">Zenith</span>
+            <span className="text-black">DevStack</span>
           </Link>
         </div>
 

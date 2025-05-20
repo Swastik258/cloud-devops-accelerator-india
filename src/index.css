@@ -110,6 +110,33 @@
   }
 }
 
+/* Responsive section paddings */
 .section {
-  @apply py-16 md:py-24;
+  @apply py-10 md:py-16 lg:py-24;
+}
+
+/* Responsive containers */
+.container {
+  @apply px-4 md:px-6 lg:px-8 mx-auto;
+}
+
+/* Responsive text sizes */
+@media (max-width: 640px) {
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+}
+
+/* Override App.css that might cause issues with responsiveness */
+#root {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
 }

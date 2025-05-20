@@ -5,21 +5,21 @@ import { Link } from "react-router-dom";
 
 const CTASection = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-r from-brand-500 to-brand-700 text-white">
+    <section className="py-12 md:py-16 lg:py-24 bg-gradient-to-r from-brand-500 to-brand-700 text-white">
       <div className="container px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
               Ready to Start Your DevOps & AWS Journey?
             </h2>
-            <p className="text-xl text-white/80 mb-6">
+            <p className="text-lg lg:text-xl text-white/80 mb-6">
               Join 500+ students who have already transformed their careers with our practical, industry-ready curriculum.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100 text-lg py-6" asChild>
+              <Button size="lg" className="w-full sm:w-auto bg-white text-brand-600 hover:bg-gray-100 py-5 md:py-6" asChild>
                 <Link to="/pricing">Enroll Now for ₹2,999</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg py-6">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white/10 py-5 md:py-6">
                 <Link to="/lab">Access DevOps Lab</Link>
               </Button>
             </div>
@@ -31,20 +31,20 @@ const CTASection = () => {
           <div className="bg-brand-400/20 backdrop-blur-sm rounded-xl p-6 border border-white/10">
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-white/10 rounded-lg p-4 text-center backdrop-blur-sm">
-                <div className="text-4xl font-bold">40+</div>
-                <div className="text-sm text-white/70">Video Lectures</div>
+                <div className="text-2xl md:text-4xl font-bold">40+</div>
+                <div className="text-xs md:text-sm text-white/70">Video Lectures</div>
               </div>
               <div className="bg-white/10 rounded-lg p-4 text-center backdrop-blur-sm">
-                <div className="text-4xl font-bold">4</div>
-                <div className="text-sm text-white/70">Projects</div>
+                <div className="text-2xl md:text-4xl font-bold">4</div>
+                <div className="text-xs md:text-sm text-white/70">Projects</div>
               </div>
               <div className="bg-white/10 rounded-lg p-4 text-center backdrop-blur-sm">
-                <div className="text-4xl font-bold">12</div>
-                <div className="text-sm text-white/70">AWS Services</div>
+                <div className="text-2xl md:text-4xl font-bold">12</div>
+                <div className="text-xs md:text-sm text-white/70">AWS Services</div>
               </div>
               <div className="bg-white/10 rounded-lg p-4 text-center backdrop-blur-sm">
-                <div className="text-4xl font-bold">24/7</div>
-                <div className="text-sm text-white/70">Support</div>
+                <div className="text-2xl md:text-4xl font-bold">24/7</div>
+                <div className="text-xs md:text-sm text-white/70">Support</div>
               </div>
             </div>
             <div className="mt-6 bg-white/10 rounded-lg p-4 text-center">
@@ -63,7 +63,7 @@ const CTASection = () => {
                   </svg>
                 ))}
               </div>
-              <p className="text-white/80 font-medium">
+              <p className="text-white/80 font-medium text-sm md:text-base">
                 4.9/5 average rating from 500+ students
               </p>
             </div>

@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-1">
             <h3 className="text-xl font-bold mb-4">
-              <span className="text-brand-400">DevOps</span>Academy
+              <span className="text-brand-400">Zenith</span>DevStack
             </h3>
             <p className="text-gray-400 mb-4">
               Master DevOps and AWS with our 3-month practical course designed for Indian IT professionals.
@@ -40,7 +40,7 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Contact</h4>
             <ul className="space-y-2">
               <li className="text-gray-400">Bangalore, India</li>
-              <li className="text-gray-400">support@devopsacademy.in</li>
+              <li className="text-gray-400">support@zenithdevstack.com</li>
               <li className="text-gray-400">+91 9876543210</li>
             </ul>
           </div>
@@ -48,7 +48,7 @@ const Footer = () => {
         
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} DevOps Academy. All rights reserved.
+            &copy; {new Date().getFullYear()} Zenith DevStack. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">
