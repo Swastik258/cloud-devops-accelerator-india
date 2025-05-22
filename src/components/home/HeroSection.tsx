@@ -25,7 +25,7 @@ const HeroSection = () => {
                   <span className="bg-gradient-to-r from-brand-400 to-brand-200 bg-clip-text text-transparent">Noxian DevForge</span>
                 </h1>
                 <h2 className="text-3xl md:text-4xl font-bold text-white">
-                  Learning DevOps & AWS Has Never Been Easier
+                  <span className="text-white">Learning DevOps & AWS Has Never Been Easier</span>
                 </h2>
                 <p className="text-xl md:text-2xl text-gray-300">
                   Master DevOps tools and 12 AWS services with real projects. Perfect for beginners and working professionals.
