@@ -12,9 +12,10 @@ const HeroSection = () => {
   return (
     <TooltipProvider>
       <div className="relative overflow-hidden">
-        {/* Background with pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800" aria-hidden="true">
-          <div className="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI2YwZjVmZiIgZD0iTTM2IDM0djZoNnYtNmgtNnptMC0zMHY2aDZ2LTZoLTZ6bTAgMTJ2NmMwIDEuMTA1LS44OTUgMi0yIDJoLTZWMTJoNmMxLjEwNSAwIDIgLjg5NSAyIDJ6bS0xMiAwdjZjMCAxLjEwNS0uODk1IDItMiAyaC02di0xMGg2YzEuMTA1IDAgMiAuODk1IDIgMnptMCAxMnY2YzAgMS4xMDUtLjg5NSAyLTIgMmgtNlYyNGg2YzEuMTA1IDAgMiAuODk1IDIgMnptLTEyIDEydjZoNnYtNmgtNnoiLz4KICAgIDwvZz4KPC9zdmc+Cg==')]"></div>
+        {/* Simple background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" aria-hidden="true">
+          {/* Adding a subtle noise overlay instead of pattern */}
+          <div className="absolute inset-0 opacity-10 bg-noise"></div>
         </div>
 
         <div className="container relative pt-20 pb-16 md:pb-32">
