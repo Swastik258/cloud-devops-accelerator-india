@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zenithdevstack.com/sitemap.xml
+Sitemap: https://noxiandevforge.com/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
@@ -20,4 +20,3 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 Disallow: /includes/
-
