@@ -12,10 +12,9 @@ const HeroSection = () => {
   return (
     <TooltipProvider>
       <div className="relative overflow-hidden">
-        {/* Simple background gradient */}
+        {/* Simple background gradient without any texture */}
         <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" aria-hidden="true">
-          {/* Adding a subtle noise overlay instead of pattern */}
-          <div className="absolute inset-0 opacity-10 bg-noise"></div>
+          {/* No texture overlay */}
         </div>
 
         <div className="container relative pt-20 pb-16 md:pb-32">
@@ -23,9 +22,11 @@ const HeroSection = () => {
             <div className="space-y-8 text-white">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
-                  <span className="bg-gradient-to-r from-brand-400 to-brand-200 bg-clip-text text-transparent">Noxian DevForge</span><br /> 
-                  <span>Master DevOps & AWS in Just 90 Days!</span>
+                  <span className="bg-gradient-to-r from-brand-400 to-brand-200 bg-clip-text text-transparent">Noxian DevForge</span>
                 </h1>
+                <h2 className="text-3xl md:text-4xl font-bold text-white">
+                  Learning DevOps & AWS Has Never Been Easier
+                </h2>
                 <p className="text-xl md:text-2xl text-gray-300">
                   Master DevOps tools and 12 AWS services with real projects. Perfect for beginners and working professionals.
                 </p>
