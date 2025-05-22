@@ -41,10 +41,10 @@ const TestimonialsSection = () => {
           <div className="inline-block rounded-lg bg-brand-50 px-3 py-1 text-sm text-brand-600">
             Student Success Stories
           </div>
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-gray-900">
-            What Our <span className="gradient-text">Students Say</span>
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-black">
+            What Our <span className="text-brand-500">Students Say</span>
           </h2>
-          <p className="max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <p className="max-w-[700px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Join hundreds of students who have transformed their careers with our course.
           </p>
         </div>
