@@ -24,13 +24,11 @@ const PricingPage = () => {
   ];
   
   const handleEnrollNow = () => {
-    // This will eventually be replaced with actual payment processing
     toast({
       title: "Enrollment initiated",
       description: "You will be redirected to the payment gateway shortly.",
     });
     
-    // For now, just show a toast notification
     setTimeout(() => {
       toast({
         title: "Demo Mode",
@@ -45,24 +43,33 @@ const PricingPage = () => {
       
       <main className="flex-grow">
         {/* Header */}
-        <div className="bg-brand-50 py-16 md:py-24">
-          <div className="container px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <span className="inline-block rounded-lg bg-brand-100 px-3 py-1 text-sm text-brand-600 mb-4">
-                Affordable Investment
-              </span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Simple, Transparent <span className="gradient-text">Pricing</span>
-              </h1>
-              <p className="text-xl text-gray-600">
-                Invest in your future with our comprehensive DevOps & AWS course with live classes.
-              </p>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-400 to-white" aria-hidden="true">
+            <div className="absolute inset-0 bg-black/10"></div>
+          </div>
+
+          <div className="container relative pt-20 pb-16 md:pb-32">
+            <div className="flex flex-col items-center text-center space-y-8">
+              <div className="space-y-4">
+                <div className="inline-block rounded-lg bg-white/20 px-3 py-1 text-sm text-white backdrop-blur-sm border border-white/30">
+                  Affordable Investment
+                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+                  Simple, Transparent <span className="text-yellow-200">Pricing</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-white max-w-3xl">
+                  Invest in your future with our comprehensive DevOps & AWS course with live classes.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+
+          <div className="absolute -left-10 top-10 w-40 h-40 bg-white/20 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute -right-10 bottom-10 w-40 h-40 bg-white/20 rounded-full blur-3xl opacity-30"></div>
+        </section>
 
         {/* Pricing */}
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-br from-red-50 to-white">
           <div className="container px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
@@ -70,25 +77,25 @@ const PricingPage = () => {
                   <div className="p-8 md:p-10 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center mb-2">
-                        <span className="bg-brand-50 p-2 rounded-full mr-3">
-                          <DollarSign className="h-6 w-6 text-brand-500" />
+                        <span className="bg-red-100 p-2 rounded-full mr-3">
+                          <DollarSign className="h-6 w-6 text-red-600" />
                         </span>
-                        <h2 className="text-2xl font-bold">One-time Payment</h2>
+                        <h2 className="text-2xl font-bold text-gray-800">One-time Payment</h2>
                       </div>
 
                       <div className="mt-6">
                         <div className="flex items-end">
-                          <span className="text-4xl font-bold">₹2,999</span>
+                          <span className="text-4xl font-bold text-gray-800">₹2,999</span>
                           <span className="text-gray-500 ml-2 line-through">₹4,999</span>
                         </div>
-                        <p className="text-brand-600 font-medium mt-1">Limited Time Offer (40% off)</p>
+                        <p className="text-red-600 font-medium mt-1">Limited Time Offer (40% off)</p>
                       </div>
 
                       <div className="mt-6">
                         <p className="text-gray-600 mb-4">
                           Get full access to the DevOps & AWS Masterclass with weekly live classes and one-on-one doubt resolution.
                         </p>
-                        <Button className="w-full bg-brand-500 hover:bg-brand-600 py-6 text-lg" onClick={handleEnrollNow}>
+                        <Button className="w-full bg-red-600 hover:bg-red-700 py-6 text-lg text-white" onClick={handleEnrollNow}>
                           Enroll Now
                         </Button>
                         <p className="text-sm text-gray-500 mt-2 text-center">
@@ -98,7 +105,7 @@ const PricingPage = () => {
                     </div>
 
                     <div className="mt-8">
-                      <div className="flex items-center p-4 rounded-lg bg-gray-50 border border-gray-100">
+                      <div className="flex items-center p-4 rounded-lg bg-red-50 border border-red-100">
                         <svg 
                           xmlns="http://www.w3.org/2000/svg" 
                           width="20" 
@@ -121,13 +128,13 @@ const PricingPage = () => {
                     </div>
                   </div>
 
-                  <div className="bg-gray-50 p-8 md:p-10">
-                    <h3 className="font-semibold text-lg mb-6">Everything included:</h3>
+                  <div className="bg-red-50 p-8 md:p-10">
+                    <h3 className="font-semibold text-lg mb-6 text-gray-800">Everything included:</h3>
                     <ul className="space-y-4">
                       {features.map((feature, index) => (
                         <li key={index} className="flex items-start">
-                          <Check className="h-5 w-5 text-brand-500 mt-0.5 mr-3 flex-shrink-0" />
-                          <span>{feature}</span>
+                          <Check className="h-5 w-5 text-red-600 mt-0.5 mr-3 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -176,10 +183,10 @@ const PricingPage = () => {
                     Enrolling with friends or colleagues? Get special discounts for group enrollment of 3 or more people. Contact us for details.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
-                    <Button className="bg-brand-500 hover:bg-brand-600" asChild>
+                    <Button className="bg-red-600 hover:bg-red-700" asChild>
                       <Link to="/contact">Contact for Group Discount</Link>
                     </Button>
-                    <Button variant="outline" className="border-brand-200 text-brand-700 hover:bg-brand-50">
+                    <Button variant="outline" className="border-red-200 text-red-700 hover:bg-red-50">
                       Learn More
                     </Button>
                   </div>
@@ -279,14 +286,14 @@ const PricingPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-gradient-to-r from-brand-500 to-brand-700 text-white">
+        <section className="py-16 bg-gradient-to-r from-red-600 to-red-400 text-white">
           <div className="container px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-6">Ready to Start Your DevOps & AWS Journey?</h2>
               <p className="text-xl mb-8 text-white/90">
                 Enroll now and transform your career with in-demand skills.
               </p>
-              <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100 py-6 px-10 text-lg" onClick={handleEnrollNow}>
+              <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 py-6 px-10 text-lg" onClick={handleEnrollNow}>
                 Enroll Now for ₹2,999 Only
               </Button>
               <p className="mt-4 text-white/80">

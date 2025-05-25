@@ -3,245 +3,246 @@ import React from 'react';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Clock, Users, Award, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const CurriculumPage = () => {
   const modules = [
     {
-      title: "Module 1: Introduction to DevOps",
-      lessons: [
-        "What is DevOps - Concepts & Principles",
-        "DevOps Culture and Mindset",
-        "DevOps Lifecycle and Practices",
-        "Understanding CI/CD Pipeline",
-        "DevOps Tools Overview"
-      ],
-      duration: "1 Week"
+      title: "Module 1: DevOps Fundamentals",
+      duration: "Week 1-2",
+      topics: [
+        "Introduction to DevOps Culture and Practices",
+        "Version Control with Git and GitHub",
+        "Basic Linux Commands and Shell Scripting",
+        "Understanding Software Development Lifecycle",
+        "DevOps Tools Overview and Ecosystem"
+      ]
     },
     {
-      title: "Module 2: Linux Fundamentals for DevOps",
-      lessons: [
-        "Linux Architecture & Command Line Basics",
-        "User Management & Permissions",
-        "Process Management & Monitoring",
-        "Package Management (apt, yum)",
-        "Shell Scripting Fundamentals",
-        "Advanced Bash Scripting for Automation"
-      ],
-      duration: "2 Weeks"
+      title: "Module 2: Containerization with Docker",
+      duration: "Week 3-4",
+      topics: [
+        "Docker Fundamentals and Architecture",
+        "Creating and Managing Docker Images",
+        "Docker Compose for Multi-container Applications",
+        "Container Registry and Image Management",
+        "Docker Networking and Volumes"
+      ]
     },
     {
-      title: "Module 3: Version Control with Git",
-      lessons: [
-        "Git Basics - Installation & Configuration",
-        "Working with Repositories - add, commit, push, pull",
-        "Branching Strategies & Workflows",
-        "Merge Conflicts Resolution",
-        "Pull Requests & Code Reviews",
-        "GitHub Actions for CI/CD"
-      ],
-      duration: "1 Week"
+      title: "Module 3: Continuous Integration/Continuous Deployment",
+      duration: "Week 5-6",
+      topics: [
+        "CI/CD Pipeline Concepts and Best Practices",
+        "Jenkins Installation and Configuration",
+        "Building Automated Testing Pipelines",
+        "GitHub Actions for CI/CD",
+        "Pipeline as Code with Jenkinsfile"
+      ]
     },
     {
-      title: "Module 4: Containerization with Docker",
-      lessons: [
-        "Container Concepts vs Virtual Machines",
-        "Docker Architecture & Installation",
-        "Working with Docker Images & Containers",
-        "Dockerfile Writing Best Practices",
-        "Docker-Compose for Multi-Container Apps",
-        "Docker Registry & Image Management",
-        "Docker Networking & Storage"
-      ],
-      duration: "2 Weeks"
+      title: "Module 4: Container Orchestration with Kubernetes",
+      duration: "Week 7-8",
+      topics: [
+        "Kubernetes Architecture and Components",
+        "Pods, Services, and Deployments",
+        "ConfigMaps and Secrets Management",
+        "Kubernetes Networking and Storage",
+        "Helm Charts for Package Management"
+      ]
     },
     {
-      title: "Module 5: Configuration Management with Ansible",
-      lessons: [
-        "Introduction to Configuration Management",
-        "Ansible Architecture & Installation",
-        "Ansible Inventory & Playbooks",
-        "Variables, Facts, and Templates",
-        "Roles & Best Practices",
-        "Dynamic Inventories",
-        "Ansible Vault for Secret Management",
-        "Integration with CI/CD Pipelines"
-      ],
-      duration: "2 Weeks"
-    },
-    {
-      title: "Module 6: CI/CD with Jenkins",
-      lessons: [
-        "Jenkins Architecture & Installation",
-        "Creating & Managing Jenkins Jobs",
-        "Jenkins Pipelines - Declarative & Scripted",
-        "Jenkinsfile Best Practices",
-        "Integration with Git, Docker & AWS",
-        "Pipeline as Code",
-        "Multi-branch Pipelines"
-      ],
-      duration: "2 Weeks"
-    },
-    {
-      title: "Module 7: Container Orchestration with Kubernetes",
-      lessons: [
-        "Kubernetes Architecture & Components",
-        "Setting up Kubernetes Cluster",
-        "Working with Pods, Services & Deployments",
-        "ConfigMaps & Secrets",
-        "Volumes & Persistent Storage",
-        "Kubernetes Networking",
-        "Helm Charts for Application Deployment"
-      ],
-      duration: "2 Weeks"
-    },
-    {
-      title: "Module 8: Infrastructure as Code with Terraform",
-      lessons: [
-        "IaC Concepts & Benefits",
-        "Terraform Basics & HCL Syntax",
+      title: "Module 5: Infrastructure as Code",
+      duration: "Week 9-10",
+      topics: [
+        "Infrastructure as Code Principles",
+        "Terraform Fundamentals and Providers",
         "Managing AWS Resources with Terraform",
-        "Terraform State Management",
-        "Modules & Best Practices",
-        "Terraform for Team Environments"
-      ],
-      duration: "2 Weeks"
+        "Terraform State Management and Best Practices",
+        "Ansible for Configuration Management"
+      ]
     },
     {
-      title: "Module 9: AWS Core Services",
-      lessons: [
-        "AWS Global Infrastructure",
-        "IAM - Users, Groups, Roles & Policies",
-        "EC2 - Virtual Servers in the Cloud",
-        "S3 - Object Storage Service",
-        "VPC - Networking in AWS",
-        "RDS - Managed Database Service",
-        "Route 53 - DNS Service",
-        "CloudWatch - Monitoring & Logs"
-      ],
-      duration: "3 Weeks"
+      title: "Module 6: AWS Cloud Services",
+      duration: "Week 11-12",
+      topics: [
+        "AWS Core Services (EC2, S3, VPC, RDS)",
+        "AWS IAM and Security Best Practices",
+        "Elastic Load Balancing and Auto Scaling",
+        "AWS Lambda and Serverless Architecture",
+        "CloudWatch for Monitoring and Logging"
+      ]
+    }
+  ];
+
+  const projects = [
+    {
+      title: "Project 1: Containerized Web Application",
+      description: "Dockerize a full-stack web application and deploy it using Docker Compose"
     },
     {
-      title: "Module 10: Advanced AWS Services",
-      lessons: [
-        "Lambda - Serverless Compute",
-        "ECR - Elastic Container Registry",
-        "ECS - Elastic Container Service",
-        "EKS - Elastic Kubernetes Service",
-        "CloudFormation - IaC for AWS",
-        "SNS & SQS - Messaging Services",
-        "CloudFront - Content Delivery Network"
-      ],
-      duration: "3 Weeks"
+      title: "Project 2: CI/CD Pipeline Implementation",
+      description: "Build a complete CI/CD pipeline using Jenkins or GitHub Actions"
     },
     {
-      title: "Module 11: Capstone Project & Interview Preparation",
-      lessons: [
-        "End-to-End DevOps Pipeline Project",
-        "AWS Architecture Design Project",
-        "Resume Building Workshop",
-        "DevOps Interview Questions & Answers",
-        "Mock Interview Sessions"
-      ],
-      duration: "2 Weeks"
+      title: "Project 3: Kubernetes Cluster Deployment",
+      description: "Deploy and manage a multi-tier application on Kubernetes"
+    },
+    {
+      title: "Project 4: Infrastructure Automation",
+      description: "Automate AWS infrastructure provisioning using Terraform"
     }
   ];
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>DevOps & AWS Course Curriculum - Complete Learning Path | Noxian DevForge</title>
+        <meta name="description" content="Comprehensive 12-week DevOps and AWS curriculum covering Docker, Kubernetes, CI/CD, Terraform, and cloud technologies with hands-on projects." />
+        <meta name="keywords" content="DevOps curriculum, AWS training syllabus, Docker course, Kubernetes learning, CI/CD pipeline, Terraform tutorial" />
+        <link rel="canonical" href="https://noxiandevforge.com/curriculum" />
+      </Helmet>
       <NavBar />
       
       <main className="flex-grow">
         {/* Header */}
-        <div className="bg-brand-50 py-16 md:py-24">
-          <div className="container px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                DevOps & AWS <span className="gradient-text">Curriculum</span>
-              </h1>
-              <p className="text-xl text-gray-600 mb-8">
-                A comprehensive 3-month journey from DevOps fundamentals to advanced AWS implementation
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-3xl font-bold text-brand-500">10</div>
-                  <div className="text-gray-500">Comprehensive Modules</div>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-400 to-white" aria-hidden="true">
+            <div className="absolute inset-0 bg-black/10"></div>
+          </div>
+
+          <div className="container relative pt-20 pb-16 md:pb-32">
+            <div className="flex flex-col items-center text-center space-y-8">
+              <div className="space-y-4">
+                <div className="inline-block rounded-lg bg-white/20 px-3 py-1 text-sm text-white backdrop-blur-sm border border-white/30">
+                  Comprehensive Learning Path
                 </div>
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-3xl font-bold text-brand-500">40+</div>
-                  <div className="text-gray-500">Video Lectures</div>
-                </div>
-                <div className="bg-white rounded-lg p-4 shadow-sm">
-                  <div className="text-3xl font-bold text-brand-500">4</div>
-                  <div className="text-gray-500">Hands-on Projects</div>
-                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+                  DevOps & AWS <span className="text-yellow-200">Curriculum</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-white max-w-3xl">
+                  Master DevOps and AWS with our structured 12-week program designed for beginners and professionals.
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 text-lg py-6 font-bold" asChild>
+                  <Link to="/pricing">Enroll Now for ₹2,999</Link>
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-white text-white hover:bg-white/20 text-lg py-6"
+                  asChild
+                >
+                  <Link to="/lab">Try Our Labs</Link>
+                </Button>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Overview */}
-        <section className="py-16">
+          <div className="absolute -left-10 top-10 w-40 h-40 bg-white/20 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute -right-10 bottom-10 w-40 h-40 bg-white/20 rounded-full blur-3xl opacity-30"></div>
+        </section>
+
+        {/* Course Overview */}
+        <section className="section bg-gradient-to-br from-red-50 to-white">
           <div className="container px-4 md:px-6">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold mb-6">Course Overview</h2>
-              <p className="text-gray-600 mb-4">
-                This is a 3-month online DevOps + AWS course designed for absolute beginners. You'll learn step-by-step, from basic Linux commands to building CI/CD pipelines using Jenkins and deploying applications on AWS.
-              </p>
-              <p className="text-gray-600 mb-4">
-                By the end of this course, you'll have:
-              </p>
-              <ul className="list-disc list-inside space-y-2 text-gray-600 mb-6">
-                <li>A solid understanding of DevOps principles and practices</li>
-                <li>Hands-on experience with essential DevOps tools: Git, Docker, Jenkins, Kubernetes, Terraform</li>
-                <li>Practical knowledge of 12 core AWS services</li>
-                <li>The ability to design, implement, and manage a complete CI/CD pipeline</li>
-                <li>Real-world projects for your portfolio</li>
-                <li>Confidence to apply for DevOps Engineer positions</li>
-              </ul>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+              <Card className="border-0 shadow-md bg-white hover:shadow-lg transition-shadow">
+                <CardHeader className="pb-2">
+                  <div className="bg-red-100 p-3 rounded-full w-fit mb-3">
+                    <Clock className="h-6 w-6 text-red-600" />
+                  </div>
+                  <CardTitle className="text-xl text-gray-800">12 Weeks</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base text-gray-600">
+                    Comprehensive training program with weekly live sessions
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-md bg-white hover:shadow-lg transition-shadow">
+                <CardHeader className="pb-2">
+                  <div className="bg-red-100 p-3 rounded-full w-fit mb-3">
+                    <Users className="h-6 w-6 text-red-600" />
+                  </div>
+                  <CardTitle className="text-xl text-gray-800">40+ Videos</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base text-gray-600">
+                    On-demand video lectures with practical demonstrations
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-md bg-white hover:shadow-lg transition-shadow">
+                <CardHeader className="pb-2">
+                  <div className="bg-red-100 p-3 rounded-full w-fit mb-3">
+                    <CheckCircle className="h-6 w-6 text-red-600" />
+                  </div>
+                  <CardTitle className="text-xl text-gray-800">4 Projects</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base text-gray-600">
+                    Hands-on projects to build your portfolio
+                  </CardDescription>
+                </CardContent>
+              </Card>
+
+              <Card className="border-0 shadow-md bg-white hover:shadow-lg transition-shadow">
+                <CardHeader className="pb-2">
+                  <div className="bg-red-100 p-3 rounded-full w-fit mb-3">
+                    <Award className="h-6 w-6 text-red-600" />
+                  </div>
+                  <CardTitle className="text-xl text-gray-800">Certificate</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-base text-gray-600">
+                    Industry-recognized completion certificate
+                  </CardDescription>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
 
         {/* Detailed Curriculum */}
-        <section className="py-16 bg-gray-50">
+        <section className="section bg-white">
           <div className="container px-4 md:px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-2xl font-bold mb-8 text-center">Detailed Curriculum</h2>
+              <div className="text-center mb-12">
+                <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700 mb-4">
+                  Detailed Curriculum
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-gray-800">
+                  What You'll <span className="text-red-600">Learn</span>
+                </h2>
+                <p className="text-gray-700 md:text-xl/relaxed mt-4 max-w-2xl mx-auto">
+                  Our curriculum is designed to take you from beginner to job-ready DevOps professional.
+                </p>
+              </div>
 
-              <Accordion type="single" collapsible className="w-full">
+              <Accordion type="single" collapsible className="w-full space-y-4">
                 {modules.map((module, index) => (
-                  <AccordionItem key={index} value={`module-${index}`} className="bg-white mb-4 rounded-lg border overflow-hidden">
-                    <AccordionTrigger className="px-6 py-4 hover:no-underline">
-                      <div className="flex flex-col sm:flex-row sm:items-center justify-between w-full text-left">
-                        <h3 className="font-semibold text-lg">{module.title}</h3>
-                        <span className="text-sm text-brand-500 font-medium mt-1 sm:mt-0">{module.duration}</span>
+                  <AccordionItem key={index} value={`item-${index}`} className="border border-gray-200 rounded-lg px-6">
+                    <AccordionTrigger className="text-left hover:no-underline">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
+                        <h3 className="text-lg font-semibold text-gray-800">{module.title}</h3>
+                        <span className="text-sm text-red-600 font-medium mt-1 sm:mt-0">{module.duration}</span>
                       </div>
                     </AccordionTrigger>
-                    <AccordionContent className="px-6 pb-4">
+                    <AccordionContent className="pt-4">
                       <ul className="space-y-2">
-                        {module.lessons.map((lesson, lessonIndex) => (
-                          <li key={lessonIndex} className="flex items-start">
-                            <svg 
-                              xmlns="http://www.w3.org/2000/svg" 
-                              width="16" 
-                              height="16" 
-                              viewBox="0 0 24 24" 
-                              fill="none" 
-                              stroke="currentColor" 
-                              strokeWidth="2" 
-                              strokeLinecap="round" 
-                              strokeLinejoin="round" 
-                              className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                            >
-                              <polyline points="20 6 9 17 4 12"></polyline>
-                            </svg>
-                            <span>{lesson}</span>
+                        {module.topics.map((topic, topicIndex) => (
+                          <li key={topicIndex} className="flex items-start">
+                            <CheckCircle className="h-5 w-5 text-red-500 mt-0.5 mr-3 flex-shrink-0" />
+                            <span className="text-gray-600">{topic}</span>
                           </li>
                         ))}
                       </ul>
@@ -254,409 +255,56 @@ const CurriculumPage = () => {
         </section>
 
         {/* Projects Section */}
-        <section className="py-16">
+        <section className="section bg-gradient-to-br from-red-50 to-white">
           <div className="container px-4 md:px-6">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold mb-6 text-center">Hands-on Projects Included</h2>
-              
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700 mb-4">
+                  Hands-on Projects
+                </div>
+                <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-gray-800">
+                  Build Your <span className="text-red-600">Portfolio</span>
+                </h2>
+                <p className="text-gray-700 md:text-xl/relaxed mt-4 max-w-2xl mx-auto">
+                  Apply your learning through real-world projects that showcase your skills to employers.
+                </p>
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                  <div className="bg-brand-50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      className="text-brand-500"
-                    >
-                      <path d="M21 18H6a2 2 0 0 1-2-2V6"></path>
-                      <path d="M6 14h12"></path>
-                      <path d="M8 6h12a2 2 0 0 1 2 2v7"></path>
-                      <path d="M11 6V3"></path>
-                      <path d="M6 18H3"></path>
-                      <path d="M17 11l2-2-2-2"></path>
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">CI/CD Pipeline Project</h3>
-                  <p className="text-gray-600 mb-4">
-                    Build a complete CI/CD pipeline using Git, Jenkins, Docker, and AWS. Deploy a web application with automated testing and continuous deployment.
-                  </p>
-                  <ul className="space-y-1 text-gray-500 text-sm">
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Source code management with Git</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Automated builds with Jenkins</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Containerization with Docker</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Deployment to AWS</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                  <div className="bg-brand-50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      className="text-brand-500"
-                    >
-                      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
-                      <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
-                      <line x1="12" y1="22.08" x2="12" y2="12"></line>
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Kubernetes on AWS Project</h3>
-                  <p className="text-gray-600 mb-4">
-                    Create a scalable microservices application using Kubernetes on AWS EKS. Deploy, scale, and manage multiple services.
-                  </p>
-                  <ul className="space-y-1 text-gray-500 text-sm">
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>EKS cluster setup</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Microservices architecture</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Service discovery & load balancing</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Auto-scaling configuration</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                  <div className="bg-brand-50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      className="text-brand-500"
-                    >
-                      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Terraform IaC Project</h3>
-                  <p className="text-gray-600 mb-4">
-                    Build and manage an entire AWS infrastructure using Terraform. Create a scalable architecture with networking, compute, storage, and more.
-                  </p>
-                  <ul className="space-y-1 text-gray-500 text-sm">
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Multi-environment setup</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Infrastructure as Code</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Remote state management</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Module development</span>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
-                  <div className="bg-brand-50 w-12 h-12 rounded-full flex items-center justify-center mb-4">
-                    <svg 
-                      xmlns="http://www.w3.org/2000/svg" 
-                      width="24" 
-                      height="24" 
-                      viewBox="0 0 24 24" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      strokeWidth="2" 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      className="text-brand-500"
-                    >
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    </svg>
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">AWS Architecture Project</h3>
-                  <p className="text-gray-600 mb-4">
-                    Design and implement a highly available, secure AWS architecture for a real-world application. Incorporate best practices for production workloads.
-                  </p>
-                  <ul className="space-y-1 text-gray-500 text-sm">
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>High availability design</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Security best practices</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Cost optimization</span>
-                    </li>
-                    <li className="flex items-start">
-                      <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width="12" 
-                        height="12" 
-                        viewBox="0 0 24 24" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        strokeWidth="2" 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        className="text-brand-500 mt-1 mr-2 flex-shrink-0"
-                      >
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                      </svg>
-                      <span>Performance monitoring</span>
-                    </li>
-                  </ul>
-                </div>
+                {projects.map((project, index) => (
+                  <Card key={index} className="border-0 shadow-md bg-white hover:shadow-lg transition-shadow">
+                    <CardHeader>
+                      <div className="bg-red-100 p-3 rounded-full w-fit mb-3">
+                        <CheckCircle className="h-6 w-6 text-red-600" />
+                      </div>
+                      <CardTitle className="text-xl text-gray-800">{project.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-base text-gray-600">
+                        {project.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-gradient-to-r from-brand-500 to-brand-700 text-white">
+        <section className="py-16 bg-gradient-to-r from-red-600 to-red-400 text-white">
           <div className="container px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6">Ready to Start Your DevOps & AWS Journey?</h2>
+              <h2 className="text-3xl font-bold mb-6">Ready to Start Your DevOps Journey?</h2>
               <p className="text-xl mb-8 text-white/90">
-                Enroll now and get instant access to our comprehensive curriculum.
+                Join hundreds of students who have transformed their careers with our comprehensive curriculum.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100">
-                  Enroll Now for ₹1,999
+                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 py-6 px-10 text-lg" asChild>
+                  <Link to="/pricing">Enroll Now for ₹2,999</Link>
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
-                  Contact Us
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 py-6 px-10 text-lg" asChild>
+                  <Link to="/contact">Have Questions?</Link>
                 </Button>
               </div>
             </div>

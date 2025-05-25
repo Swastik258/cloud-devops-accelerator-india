@@ -81,38 +81,50 @@ const TestimonialsPage = () => {
       
       <main className="flex-grow">
         {/* Header */}
-        <div className="bg-brand-50 py-16 md:py-24">
-          <div className="container px-4 md:px-6">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-                Student <span className="gradient-text">Success Stories</span>
-              </h1>
-              <p className="text-xl text-gray-600">
-                Hear from our graduates who've transformed their careers with our DevOps & AWS course.
-              </p>
+        <section className="relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-400 to-white" aria-hidden="true">
+            <div className="absolute inset-0 bg-black/10"></div>
+          </div>
+
+          <div className="container relative pt-20 pb-16 md:pb-32">
+            <div className="flex flex-col items-center text-center space-y-8">
+              <div className="space-y-4">
+                <div className="inline-block rounded-lg bg-white/20 px-3 py-1 text-sm text-white backdrop-blur-sm border border-white/30">
+                  Success Stories
+                </div>
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+                  Student <span className="text-yellow-200">Success Stories</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-white max-w-3xl">
+                  Hear from our graduates who've transformed their careers with our DevOps & AWS course.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+
+          <div className="absolute -left-10 top-10 w-40 h-40 bg-white/20 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute -right-10 bottom-10 w-40 h-40 bg-white/20 rounded-full blur-3xl opacity-30"></div>
+        </section>
 
         {/* Stats */}
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-br from-red-50 to-white">
           <div className="container px-4 md:px-6">
             <div className="max-w-5xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div className="bg-white rounded-lg p-6 shadow-sm text-center">
-                  <div className="text-4xl font-bold text-brand-500">500+</div>
+                <div className="bg-white rounded-lg p-6 shadow-sm text-center border border-red-100">
+                  <div className="text-4xl font-bold text-red-600">500+</div>
                   <div className="text-gray-500 mt-2">Students Trained</div>
                 </div>
-                <div className="bg-white rounded-lg p-6 shadow-sm text-center">
-                  <div className="text-4xl font-bold text-brand-500">4.9/5</div>
+                <div className="bg-white rounded-lg p-6 shadow-sm text-center border border-red-100">
+                  <div className="text-4xl font-bold text-red-600">4.9/5</div>
                   <div className="text-gray-500 mt-2">Average Rating</div>
                 </div>
-                <div className="bg-white rounded-lg p-6 shadow-sm text-center">
-                  <div className="text-4xl font-bold text-brand-500">80%</div>
+                <div className="bg-white rounded-lg p-6 shadow-sm text-center border border-red-100">
+                  <div className="text-4xl font-bold text-red-600">80%</div>
                   <div className="text-gray-500 mt-2">Career Advancement</div>
                 </div>
-                <div className="bg-white rounded-lg p-6 shadow-sm text-center">
-                  <div className="text-4xl font-bold text-brand-500">30%+</div>
+                <div className="bg-white rounded-lg p-6 shadow-sm text-center border border-red-100">
+                  <div className="text-4xl font-bold text-red-600">30%+</div>
                   <div className="text-gray-500 mt-2">Average Salary Increase</div>
                 </div>
               </div>
@@ -121,11 +133,16 @@ const TestimonialsPage = () => {
         </section>
 
         {/* Video Testimonials */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="container px-4 md:px-6">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-2xl font-bold mb-4">Video Testimonials</h2>
+                <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700 mb-4">
+                  Video Testimonials
+                </div>
+                <h2 className="text-3xl font-bold mb-4 text-gray-800">
+                  Watch Success <span className="text-red-600">Stories</span>
+                </h2>
                 <p className="text-gray-600">
                   Watch how our course has helped students advance their careers.
                 </p>
@@ -133,7 +150,7 @@ const TestimonialsPage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {videoTestimonials.map((video, index) => (
-                  <div key={index} className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
+                  <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md border border-red-100">
                     <div className="aspect-video bg-gray-100 relative">
                       <img 
                         src={video.thumbnail} 
@@ -152,7 +169,7 @@ const TestimonialsPage = () => {
                             strokeWidth="2" 
                             strokeLinecap="round" 
                             strokeLinejoin="round" 
-                            className="text-brand-500"
+                            className="text-red-600"
                           >
                             <polygon points="5 3 19 12 5 21 5 3"></polygon>
                           </svg>
@@ -160,7 +177,7 @@ const TestimonialsPage = () => {
                       </div>
                     </div>
                     <div className="p-6">
-                      <h3 className="font-semibold text-lg">{video.name}</h3>
+                      <h3 className="font-semibold text-lg text-gray-800">{video.name}</h3>
                       <p className="text-gray-500">{video.role} at {video.company}</p>
                       <p className="text-gray-500 text-sm mt-1">{video.location}</p>
                     </div>
@@ -172,11 +189,16 @@ const TestimonialsPage = () => {
         </section>
 
         {/* Written Testimonials */}
-        <section className="py-16">
+        <section className="py-16 bg-gradient-to-br from-red-50 to-white">
           <div className="container px-4 md:px-6">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-2xl font-bold mb-4">What Our Students Say</h2>
+                <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700 mb-4">
+                  Student Reviews
+                </div>
+                <h2 className="text-3xl font-bold mb-4 text-gray-800">
+                  What Our Students <span className="text-red-600">Say</span>
+                </h2>
                 <p className="text-gray-600">
                   Read some of the feedback we've received from our graduates.
                 </p>
@@ -184,7 +206,7 @@ const TestimonialsPage = () => {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                  <div key={index} className="bg-white rounded-xl p-6 shadow-md border border-red-100">
                     <div className="flex items-start mb-4">
                       <img 
                         src={testimonial.image} 
@@ -192,7 +214,7 @@ const TestimonialsPage = () => {
                         className="h-12 w-12 rounded-full object-cover mr-4"
                       />
                       <div>
-                        <h3 className="font-semibold">{testimonial.name}</h3>
+                        <h3 className="font-semibold text-gray-800">{testimonial.name}</h3>
                         <p className="text-sm text-gray-500">{testimonial.role} at {testimonial.company}</p>
                         <p className="text-sm text-gray-500">{testimonial.location}</p>
                       </div>
@@ -225,11 +247,16 @@ const TestimonialsPage = () => {
         </section>
 
         {/* Companies */}
-        <section className="py-16 bg-gray-50">
+        <section className="py-16 bg-white">
           <div className="container px-4 md:px-6">
             <div className="max-w-5xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-2xl font-bold mb-4">Where Our Students Work</h2>
+                <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700 mb-4">
+                  Career Success
+                </div>
+                <h2 className="text-3xl font-bold mb-4 text-gray-800">
+                  Where Our Students <span className="text-red-600">Work</span>
+                </h2>
                 <p className="text-gray-600">
                   Our graduates are working at some of the leading tech companies in India.
                 </p>
@@ -237,7 +264,7 @@ const TestimonialsPage = () => {
 
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
                 {['Amazon', 'Microsoft', 'TCS', 'Infosys', 'Wipro', 'Accenture', 'HCL', 'MindTree', 'CTS', 'IBM', 'Tech Mahindra', 'Capgemini'].map((company, index) => (
-                  <div key={index} className="h-20 bg-white rounded-lg flex items-center justify-center shadow-sm">
+                  <div key={index} className="h-20 bg-white rounded-lg flex items-center justify-center shadow-sm border border-red-100">
                     <span className="font-semibold text-gray-500">{company}</span>
                   </div>
                 ))}
@@ -247,7 +274,7 @@ const TestimonialsPage = () => {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-gradient-to-r from-brand-500 to-brand-700 text-white">
+        <section className="py-16 bg-gradient-to-r from-red-600 to-red-400 text-white">
           <div className="container px-4 md:px-6">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="text-3xl font-bold mb-6">Join Our Success Stories</h2>
@@ -255,10 +282,10 @@ const TestimonialsPage = () => {
                 Take the first step towards transforming your career today.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-white text-brand-600 hover:bg-gray-100">
-                  Enroll Now for ₹1,999
+                <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 py-6 px-10 text-lg">
+                  Enroll Now for ₹2,999
                 </Button>
-                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+                <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 py-6 px-10 text-lg">
                   View Course Curriculum
                 </Button>
               </div>
