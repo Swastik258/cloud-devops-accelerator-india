@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -44,7 +43,7 @@ const TestimonialsSection = () => {
           <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-black">
             What Our <span className="text-brand-500">Students Say</span>
           </h2>
-          <p className="max-w-[700px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <p className="max-w-[700px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Join hundreds of students who have transformed their careers with our course.
           </p>
         </div>
@@ -60,7 +59,7 @@ const TestimonialsSection = () => {
                     className="h-12 w-12 rounded-full object-cover"
                   />
                   <div>
-                    <h3 className="font-bold">{testimonial.name}</h3>
+                    <h3 className="font-bold text-black">{testimonial.name}</h3>
                     <p className="text-sm text-gray-500">{testimonial.location} • {testimonial.role}</p>
                   </div>
                 </div>
@@ -81,7 +80,7 @@ const TestimonialsSection = () => {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-gray-600">"{testimonial.testimonial}"</p>
+                  <p className="text-black">"{testimonial.testimonial}"</p>
                 </div>
               </CardContent>
             </Card>

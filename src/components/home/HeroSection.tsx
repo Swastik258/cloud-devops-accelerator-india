@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
@@ -19,15 +18,15 @@ const HeroSection = () => {
 
         <div className="container relative pt-20 pb-16 md:pb-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            <div className="space-y-8 text-white">
+            <div className="space-y-8 text-black">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
                   <span className="bg-gradient-to-r from-brand-400 to-brand-200 bg-clip-text text-transparent">Noxian DevForge</span>
                 </h1>
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
-                  <span className="text-white">Learning DevOps & AWS Has Never Been Easier</span>
+                <h2 className="text-3xl md:text-4xl font-bold text-black">
+                  <span className="text-black">Learning DevOps & AWS Has Never Been Easier</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-gray-300">
+                <p className="text-xl md:text-2xl text-black">
                   Master DevOps tools and 12 AWS services with real projects. Perfect for beginners and working professionals.
                 </p>
               </div>
@@ -48,7 +47,7 @@ const HeroSection = () => {
               </div>
 
               <div className="px-4 py-2 bg-brand-900/50 border border-brand-700 rounded-lg inline-block">
-                <p className="text-sm text-gray-300">
+                <p className="text-sm text-black">
                   <span className="font-medium text-brand-300">Limited time offer:</span> Enroll today and get 20% off!
                 </p>
               </div>
@@ -57,11 +56,11 @@ const HeroSection = () => {
             <div className="relative h-[24rem] lg:h-auto">
               <div className="absolute -top-6 -right-6 w-72 h-72 bg-brand-600/30 rounded-full blur-3xl opacity-30"></div>
               <div className="relative bg-gray-800 shadow-xl rounded-2xl overflow-hidden border border-gray-700">
-                <div className="p-6 bg-gradient-to-r from-brand-600 to-brand-700 text-white">
+                <div className="p-6 bg-gradient-to-r from-brand-600 to-brand-700 text-black">
                   <h2 className="text-xl font-bold">DevOps & AWS Masterclass</h2>
-                  <p className="text-brand-100">3-Month Comprehensive Course</p>
+                  <p className="text-black">3-Month Comprehensive Course</p>
                 </div>
-                <div className="p-6 space-y-4 text-white">
+                <div className="p-6 space-y-4 text-black bg-white">
                   <div className="flex items-start gap-3">
                     <div className="bg-brand-900/50 p-2 rounded-full">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-400">
@@ -70,7 +69,7 @@ const HeroSection = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Beginner to Advanced</h3>
-                      <p className="text-sm text-gray-400">No prior experience required</p>
+                      <p className="text-sm text-gray-600">No prior experience required</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -86,7 +85,7 @@ const HeroSection = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">40+ Hours of Content</h3>
-                      <p className="text-sm text-gray-400">On-demand video lectures</p>
+                      <p className="text-sm text-gray-600">On-demand video lectures</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
@@ -99,7 +98,7 @@ const HeroSection = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold">Real-World Projects</h3>
-                      <p className="text-sm text-gray-400">Build your portfolio</p>
+                      <p className="text-sm text-gray-600">Build your portfolio</p>
                     </div>
                   </div>
 
