@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 
@@ -34,23 +35,23 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="section bg-gray-50">
+    <section className="section bg-gradient-to-br from-red-50 to-white">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
-          <div className="inline-block rounded-lg bg-brand-50 px-3 py-1 text-sm text-brand-600">
+          <div className="inline-block rounded-lg bg-red-100 px-3 py-1 text-sm text-red-700">
             Student Success Stories
           </div>
-          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-black">
-            What Our <span className="text-brand-500">Students Say</span>
+          <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight text-gray-800">
+            What Our <span className="text-red-600">Students Say</span>
           </h2>
-          <p className="max-w-[700px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          <p className="max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Join hundreds of students who have transformed their careers with our course.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-0 shadow-md">
+            <Card key={index} className="border-0 shadow-md bg-white">
               <CardContent className="p-6">
                 <div className="flex items-start space-x-4">
                   <img 
@@ -59,7 +60,7 @@ const TestimonialsSection = () => {
                     className="h-12 w-12 rounded-full object-cover"
                   />
                   <div>
-                    <h3 className="font-bold text-black">{testimonial.name}</h3>
+                    <h3 className="font-bold text-gray-800">{testimonial.name}</h3>
                     <p className="text-sm text-gray-500">{testimonial.location} • {testimonial.role}</p>
                   </div>
                 </div>
@@ -80,7 +81,7 @@ const TestimonialsSection = () => {
                       </svg>
                     ))}
                   </div>
-                  <p className="text-black">"{testimonial.testimonial}"</p>
+                  <p className="text-gray-700">"{testimonial.testimonial}"</p>
                 </div>
               </CardContent>
             </Card>
