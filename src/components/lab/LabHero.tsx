@@ -5,41 +5,51 @@ import { Link } from "react-router-dom";
 
 const LabHero = () => {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-r from-gray-900 to-brand-900 relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <pattern id="grid" width="8" height="8" patternUnits="userSpaceOnUse">
-              <path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" strokeWidth="0.5" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
+    <section className="relative overflow-hidden">
+      {/* Red and white gradient background similar to upGrad */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-400 to-white" aria-hidden="true">
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
-      <div className="container px-4 md:px-6 relative">
-        <div className="flex flex-col items-center text-center">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-6">
-            DevOps Practice Lab
-          </h1>
-          <p className="text-xl text-white/80 max-w-2xl mb-8">
-            Get hands-on experience with real-world DevOps tools and infrastructure in our fully managed cloud environment.
-          </p>
+      <div className="container relative pt-20 pb-16 md:pb-32">
+        <div className="flex flex-col items-center text-center space-y-8">
+          <div className="space-y-4">
+            <div className="inline-block rounded-lg bg-white/20 px-3 py-1 text-sm text-white backdrop-blur-sm border border-white/30">
+              Hands-on Practice Environment
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white">
+              DevOps Practice Lab
+            </h1>
+            <p className="text-xl md:text-2xl text-white max-w-3xl">
+              Get hands-on experience with real-world DevOps tools and infrastructure in our fully managed cloud environment. Practice with Docker, Kubernetes, AWS, and more.
+            </p>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-brand-500 text-white hover:bg-brand-600 text-lg py-6 px-8" asChild>
+            <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100 text-lg py-6 font-bold" asChild>
               <Link to="/pricing">Access Labs Now</Link>
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg py-6 px-8">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white text-white hover:bg-white/20 text-lg py-6"
+            >
               View Lab Documentation
             </Button>
+          </div>
+
+          <div className="px-4 py-2 bg-white/20 border border-white/30 rounded-lg inline-block backdrop-blur-sm">
+            <p className="text-sm text-white">
+              <span className="font-medium text-yellow-200">24/7 Access:</span> Practice anytime, anywhere with our cloud-based labs
+            </p>
           </div>
         </div>
       </div>
 
-      {/* Glowing orbs */}
-      <div className="absolute -left-10 top-10 w-40 h-40 bg-brand-600/40 rounded-full blur-3xl"></div>
-      <div className="absolute -right-10 bottom-10 w-40 h-40 bg-brand-400/30 rounded-full blur-3xl"></div>
+      {/* Decorative elements */}
+      <div className="absolute -left-10 top-10 w-40 h-40 bg-white/20 rounded-full blur-3xl opacity-30"></div>
+      <div className="absolute -right-10 bottom-10 w-40 h-40 bg-white/20 rounded-full blur-3xl opacity-30"></div>
     </section>
   );
 };
